@@ -1,0 +1,10 @@
+{
+    "Title":"Flappy bird game!",
+    "Size": [600,600],
+    "Fps": 30,
+
+    "Assets" : [
+        ["bg", "../../flappy-bird/sprites/background-day.png", 0],
+        ["base", "../../flappy-bird/sprites/base.png", 0]
+    ]
+}

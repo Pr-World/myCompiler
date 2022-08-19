@@ -1,0 +1,86 @@
+class main Main
+
+function init(assets) {
+	var self.assets = assets
+	var self.bg = Object.of(Background, assets.base, assets.size)
+}
+
+function update() {
+	self.bg.draw(self.screen)
+}
+
+class end
+
+
+class sprite Background
+
+function init(bg, base, size) {
+
+	var self.size = size
+	var self.img = pyg.img.resize(bg, size[0], size[1]-75)
+
+	var self.imgr = list(
+		pyg.rect(0, 0, size[0], size[1]-75),pyg.rect(size[0], 0, size[0], size[1]-75),
+		pyg.rect(size[0], 0, size[0], size[1]-75)
+	)
+
+	var self.base = pyg.img.crop(
+		pyg.img.resize(base, size[0], 75), 0, 2, "default", "default"
+	)
+
+	var self.baser = list(
+		pyg.rect(0, size[1]-75, size[0], size[1]),
+		pyg.rect(size[0], size[1]-75, size[0], size[1])
+	)
+
+	var self.speedx = 2
+	var self.basespeed = 5
+
+}
+
+function reset() {
+
+	var self.imgr = list(
+		pyg.rect(0, 0, self.size[0], self.size[1]-75),
+		pyg.rect(self.size[0], 0, self.size[0], self.size[1]-75)
+	)
+
+	var self.baser = list(
+		pyg.rect(0, self.size[1]-75, self.size[0], self.size[1]),
+		pyg.rect(self.size[0], self.size[1]-75, self.size[0], self.size[1])
+	)
+
+}
+
+function update() {
+
+	var self.image_rect[0].x -= self.speedx
+	var self.image_rect[1].x -= self.speedx
+	var self.base_rect[0].x -= self.basespeed
+	var self.base_rect[1].x -= self.basespeed
+
+	if self.image_rect[1].x - self.speedx < 0
+	{
+		var self.image_rect[0].x = 0
+		var self.image_rect[1].x = self.size[0]
+	}
+
+	if self.base_rect[1].x-self.basespeed < 0
+	{
+		var self.base_rect[0].x = 0
+		var self.base_rect[1].x = self.size[0]
+	}
+}
+
+function still() {
+	var self.to_update = false
+}
+
+function draw(screen) {
+	screen.blit(self.img, self.imgr[0])
+	screen.blit(self.img, self.imgr[1])
+	screen.blit(self.base, self.baser[0])
+	screen.blit(self.base, self.baser[1])
+}
+
+class end

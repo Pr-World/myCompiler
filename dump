@@ -1,0 +1,44 @@
+dump
+
+	var self.start = false
+	assets.music.play(-1)
+	assets.music.set_volume(0.4)
+
+{
+    "Title":"Flappy bird game!",
+    "Size": [600,600],
+    "Fps": 30,
+
+    "Assets" : [
+        
+        ["music", "../../flappy-bird/audio/music.ogg", 1],
+        ["fly", "../../flappy-bird/audio/wing.ogg", 1],
+        ["hit", "../../flappy-bird/audio/hit.ogg", 1],
+        ["die", "../../flappy-bird/audio/die.ogg", 1],
+        ["score", "../../flappy-bird/audio/point.ogg", 1],
+        
+        ["bg", "../../flappy-bird/sprites/background-day.png", 0],
+        ["base", "../../flappy-bird/sprites/base.png", 0],
+        ["start", "../../flappy-bird/sprites/message.png", 0],
+        ["end", "../../flappy-bird/sprites/gameover.png", 0],
+
+        ["bird-0", "../../flappy-bird/sprites/yellowbird-0.png", 0],
+        ["bird-1", "../../flappy-bird/sprites/yellowbird-1.png", 0],
+        ["bird-2", "../../flappy-bird/sprites/yellowbird-2.png", 0],
+
+        ["pipe-0", "../../flappy-bird/sprites/pipe-head.png", 0],
+        ["pipe-1", "../../flappy-bird/sprites/pipe-body.png", 0],
+
+        ["0", "../../flappy-bird/sprites/0.png", 0],
+        ["1", "../../flappy-bird/sprites/1.png", 0],
+        ["2", "../../flappy-bird/sprites/2.png", 0],
+        ["3", "../../flappy-bird/sprites/3.png", 0],
+        ["4", "../../flappy-bird/sprites/4.png", 0],
+        ["5", "../../flappy-bird/sprites/5.png", 0],
+        ["6", "../../flappy-bird/sprites/6.png", 0],
+        ["7", "../../flappy-bird/sprites/7.png", 0],
+        ["8", "../../flappy-bird/sprites/8.png", 0],
+        ["9", "../../flappy-bird/sprites/9.png", 0]
+
+    ],
+}
